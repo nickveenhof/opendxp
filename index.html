@@ -1,0 +1,558 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>reveal.js</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/dropsolid.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2 class="caps">
+                    <span>Moving beyond CMS, enter DXP. An Open Source Approach</span>
+                </h2>
+                <a href="https://dropsolid.com"><img data-src="img/dropsolidlogo.png" class="logo" /></a>
+                <p>
+                    <small>
+                        <img data-src="img/drupalcamplondon.svg" class="avatar-40" />
+                        <img data-src="img/nick.jpg" class="avatar-40" />
+                        &nbsp;&nbsp;<a href="https://twitter.com/nick_vh?lang=en">@nick_vh</a>
+                        &nbsp;-&nbsp;CTO
+                    </small>
+                </p>
+                <aside class="notes">
+                    Websites are not enough. Business these days are required to deliver
+                    highly personalized digital experiences to their stakeholders to remain
+                    competitive, and need to adhere to consent management and the GDPR rules,
+                    within a reasonable cost.
+                </aside>
+            </section>
+            <section>
+                <h2>
+                    What is the endgoal of a website?
+                </h2>
+            </section>
+            <section>
+                <h2>
+                    Why do we build websites?
+                </h2>
+                <span class="fragment">
+                    <p>Is it selling products?</p>
+                </span>
+                <span class="fragment">
+                    <p>Is it to help the visitor to find the right product?</p>
+                </span>
+                <aside class="notes">
+                    Ecommerce is simple, selling things. When we look at government it is
+                    very much a different story and it is focussed on informing the right
+                    audience and how do we define right? How can we best help the visitor
+                    to achieve its goals. Take a moment and think if you know the metrics
+                    on which you will be able to measure in a year after launch if the project
+                    was a success.
+                    Does your customer even know?
+                </aside>
+            </section>
+            <section>
+                <h2>
+                    What is happening?
+                </h2>
+            </section>
+            <section data-background-image="img/dxpquadrant.png" data-background-opacity="0.4">
+                <h2>
+                    Gartner CMS quadrant has been removed and replaced with a DXP Quadrant
+                </h2>
+            </section>
+            <section data-background-image="img/adobedxp.png" data-background-opacity="0.4">
+                <h2>
+                    Adobe DXP
+                </h2>
+            </section>
+            <section data-background-image="img/sitecoredxp.png" data-background-opacity="0.4">
+                <h2>
+                    Sitecore DXP
+                </h2>
+            </section>
+            <section data-background-image="img/acquiadxp.png" data-background-opacity="0.4">
+                <h2>
+                    Acquia DXP
+                </h2>
+            </section>
+            <section data-background-image="img/liferaydxp.png" data-background-opacity="0.4">
+                <h2>
+                    Liferay DXP
+                </h2>
+            </section>
+            <section data-background-image="img/episerverdxp.png" data-background-opacity="0.4">
+                <h2>
+                    Episerver DXP
+                </h2>
+            </section>
+            <section data-background-image="img/dropsoliddxp.png" data-background-opacity="0.4">
+                <h2>
+                    Dropsolid DXP
+                </h2>
+            </section>
+            <section>
+                <blockquote>As the Drupal community, we need to stop thinking of Drupal as a "content management platform" and start looking at it as a "digital experience platform" used to create ideal visitor experiences.</blockquote>
+                <p>
+                    <small class="avatar">
+                        <img data-src="img/dries.jpeg" class="avatar-40" />
+                        &nbsp;&nbsp;<a href="https://twitter.com/nick_vh?lang=en">@dries</a>
+                        &nbsp;-&nbsp;<a href="https://dri.es/from-content-management-to-digital-experience-management">dri.es</a>
+                        &nbsp;-&nbsp;Jan 2014
+                    </small>
+                </p>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section>
+                <h2>
+                    Why should you care?
+                </h2>
+                <aside class="notes">
+                    Because you are the ones building them. You decide what a web experience looks like, you sit together with the customer defining the digital roadmap. You are in control.
+                </aside>
+            </section>
+            <section data-background-image="img/3pillars.png" data-background-opacity="0.1">
+                <span>
+                    <p>Not just a bucket of products</p>
+                </span>
+                <span class="fragment">
+                    <p>Not just a website or an app</p>
+                </span>
+                <span class="fragment">
+                    <p>Not a tool</p>
+                </span>
+                <span class="fragment">
+                    <p>Not a one-way communication vehicle</p>
+                </span>
+                <span class="fragment">
+                    <p>Not standalone</p>
+                </span>
+                <span class="fragment">
+                    <p>Not IT nor Marketing system</p>
+                </span>
+                <span class="fragment">
+                    <p>Not a monolithic system</p>
+                </span>
+            </section>
+            <section data-background-image="img/cossevolution.png" data-background-opacity="0.1">
+                <img src="img/cossevolution.png" />
+                <h2>
+                    Let's get technical
+                </h2>
+                <small>source: https://medium.com/gitlab-magazine/enterprise-software-evolution-from-custom-to-cots-to-saas-to-coss-879611a944d</small>
+                <aside class="notes">
+                    Commercial Off The Shelf (COTS)<br />
+                    Software as a Service (SaaS)<br />
+                    Commercial Open Source Software (COSS)<br />
+                </aside>
+            </section>
+            <section data-background-image="img/opencore.jpg" data-background-opacity="0.4">
+                <p><a href="https://docs.google.com/spreadsheets/u/1/d/17nKMpi_Dh5slCqzLSFBoWMxNvWiwt2R-t4e_l7LPLhU/edit">Data</a> overwhelmingly shows that <a href="https://en.wikipedia.org/wiki/Open_core">open core (OC)</a> is the dominant business model used by the most successful COSS companies.</p>
+                <small>Source: https://coss.media/open-core-definition-examples-tradeoffs/</small>
+                <aside class="notes">
+                    Open core is a business model for the monetization of commercially produced open-source software…the open-core model primarily involves offering a “core” or feature-limited version of a software product as free and open-source software, while offering “commercial” versions or add-ons as proprietary software.
+                </aside>
+            </section>
+            <section data-background-image="img/3pillars.png" data-background-opacity="0.1">
+                <img src="img/3pillars.png" />
+                <p>Let's take that apart in what that means in the Drupal Ecosystem to build such a DXP for a customer.</p>
+            </section>
+            <section data-background-image="img/3pillars.png" data-background-opacity="0.05">
+                <h3>Management</h3>
+                <div class="flex-container">
+                    <div class="col">
+                        <h4>Basic</h4>
+                        <small class="left">
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Custom Profiles, registration, login & password management.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Create groups/communities to exchange information.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Structured data, accessibility of rich information. Controlling content consumed over multiple channels.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Roles & Permissions.
+                                </span>
+                            </p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h4>Advanced</h4>
+                        <small class="left">
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    Keep a customer profile.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    Voice, immersive elements, ...
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    SSO/Auth2, 2FA, etc..
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Team sites, forums, chat, B2B partner sites, ...
+                                </span>
+                            </p>
+                        </small>
+                    </div>
+                </div>
+                <aside class="notes">A+ on the basics, missing key components in the open ecosystem to embed customer profile data<br /><br />
+                    A+ for content & media management.
+                    <br /><br />
+                    A+ on Roles & Permissions. Super granular and many plugins to increase security. Also the security team on Drupal.org is one of the finest.
+                </aside>
+            </section>
+            <section data-background-image="img/3pillars.png" data-background-opacity="0.05">
+                <h3>Platform</h3>
+                <div class="flex-container">
+                    <div class="col">
+                        <h4>Basic</h4>
+                        <small class="left">
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Make custom development easy
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    Deploy in public or private clouds quickly
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Allow integrations to be created to expose and interact with data
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Multi-channel. Headless/Decoupled/Hybrid.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    Easy of use for site visitors, content editors, developers, analysts, ...</span></p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h4>Advanced</h4>
+                        <small class="left">
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="3">
+                                    Natural language generation, image detection, digital assistants, neural networks in function of assisted decision making.
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Development Community.
+                                </span></p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Prepackaged components for CRM, ERP, HR,...
+                                </span></p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    Creating alternate UI's to/for those channels that cater to people on the move.
+                                </span></p>
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="3">Empower users to make the "right" decisions in an intuitive and attractive interfaces.</span></p>
+                        </small>
+                    </div>
+                </div>
+                <aside class="notes">Given that Drupal doesn't do AI nor claims to be a platform we're looking at integrations with the big cloud vendors like AWS, Google Cloud and Azure. In the ecosystem we see many integrations popping up to integrate with those API's.
+                    <br /><br />
+                    PHP isn't Cloud's best friend. There are hosting companies that specialises to run Drupal in the cloud like Dropsolid, Platform.sh, Acquia etc.. It's possible to do this yourselves but it requires effort. B+
+                    <br /><br />
+                    Not too bad here, but creating alternate UI's and generate mobile app's is something that should be searched for in another (saas) software product.
+                    <br /><br />
+                    Depends on who you ask, great for power users, bit harder for beginners. But we know this right?
+                </aside>
+            </section>
+            <section data-background-image="img/3pillars.png" data-background-opacity="0.05">
+                <h3>Experience</h3>
+                <div class="flex-container">
+                    <div class="col">
+                        <h4>Basic</h4>
+                        <small class="left">
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="3">
+                                    Make measuring and adjusting effortless for the marketeer.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="3">
+                                    Capture anonymous & authenticated traffic. Create rules to detect intents.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="3">
+                                    Change the site according to the intent.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Query the site, find your stuff. Filter using taxonomies (facets)
+                                </span>
+                            </p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h4>Advanced</h4>
+                        <small class="left">
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="3">
+                                    Introduce personalisation + A/B testing
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="3">
+                                    Add AI to detect patterns in order to help the Marketeer define the segments.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    Coupling with marketing automation tools to deliver more targeted content in a 1:1 interaction.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    Recommended content or connected content. Federated Search.
+                                </span>
+                            </p>
+                            <p> <span class="fragment highlight-yellow" data-fragment-index="2">
+                                    Personalise search and/or boost results with AI.</span></p>
+                        </small>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Not so much Drupal, more the task of the company who builds the site to make sure it has a tight link with analytic tools like Google Analytics, Google Data studio etc. We're looking at other tooling here.
+                    Think of persona's. Eg, paragraph A is for technical audience. Paragraph B is for the business audience. Both have different call to actions and cleans up the UI. Being able to configure presentation layer based on device or different route. Think of different markets (UK businesses vs UK consumers + Layout builder with different breakpoints, possibly in a decoupled way)
+                    Again not so much Drupal. Drupal could react to context - hurray to Drupal's cache context and tag system but it is harder to keep track of the context. It is possible to show different content to different domains but very much a 1 to many content orchestration.
+                    Great! Huge ecosystem of Search API + Solr and other technologies and Solr allows Machine learning to optimize the search results.
+                    Bonus: There is even a way to personalise search results!
+                </aside>
+            </section data-background-image="img/3pillars.png" data-background-opacity="0.05">
+            <section>
+                <h2>
+                    So what do we have, translated?
+                </h2>
+                <span class="fragment">
+                    <p>Drupal + Massive ecosystem and community on drupal.org</p>
+                </span>
+                <span class="fragment">
+                    <p>Intensive integration with Apache Solr/Elasticsearch using Search API</p>
+                </span>
+                <span class="fragment">
+                    <p>Open source marketing automation using Mautic</p>
+                </span>
+                <span class="fragment">
+                    <p>Many vendors for hosting your Drupal site on steroids + support for technologies like Solr/Elastic</p>
+                </span>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section data-background-image="img/3pillars.png" data-background-opacity="0.05">
+                <h2>
+                    What are we missing?
+                </h2>
+                <span class="fragment">
+                    <p>Customer Data Platform</p>
+                    <p>Personalisation</p>
+                    <p>Consent management</p>
+                </span>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section data-background-image="img/3pillars.png" data-background-opacity="0.05">
+                <h3>Experience</h3>
+                <div class="flex-container">
+                    <div class="col">
+                        <h4>Basic</h4>
+                        <small class="left">
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="1">
+                                    <span class="fragment highlight-yellow" data-fragment-index="2">
+                                        Make measuring and adjusting effortless for the marketeer.
+                                    </span>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="1">
+                                    <span class="fragment highlight-green" data-fragment-index="2">
+                                        Capture anonymous & authenticated traffic. Create rules to detect intents.
+                                    </span>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="1">
+                                    <span class="fragment highlight-green" data-fragment-index="2">
+                                        Change the site according to the intent.
+                                    </span>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-green" data-fragment-index="1">
+                                    Query the site, find your stuff. Filter using taxonomies (facets)
+                                </span>
+                            </p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h4>Advanced</h4>
+                        <small class="left">
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="1">
+                                    <span class="fragment highlight-green" data-fragment-index="2">
+                                        Introduce personalisation + A/B testing
+                                    </span>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-red" data-fragment-index="1">
+                                    Add AI to detect patterns in order to help the Marketeer define the segments.
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="1">
+                                    <span class="fragment highlight-green" data-fragment-index="2">
+                                        Coupling with marketing automation tools to deliver more targeted content in a 1:1 interaction.
+                                    </span>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fragment highlight-yellow" data-fragment-index="1">
+                                    Recommended content or connected content. Federated Search.
+                                </span>
+                            </p>
+                            <p> <span class="fragment highlight-yellow" data-fragment-index="1">
+                                    Personalise search and/or boost results with AI.</span></p>
+                        </small>
+                    </div>
+                </div>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section>
+                <h4>Capture anonymous & authenticated traffic. Create rules to detect intents.</h4>
+                <!-- Add video here of the Dropsolid site that changes with behavior -->
+                <iframe width="1125" height="633" src="https://drive.google.com/file/d/1-OjNuyEtPDQTviQTjEEs81Nm0GnKnPYn/preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <aside class="notes">
+                    Show how it looks like for the Dropsolid site.
+                </aside>
+            </section>
+            <section>
+                <h4>Change the site according to the intent</h4>
+                <!-- Add video here of the Dropsolid site that changes with behavior -->
+                <iframe width="1125" height="633" src="https://drive.google.com/file/d/14A6jS4j0dHDXukKYVeBmkdMmgFxz1D1w/preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <aside class="notes">
+                    Show how it looks like in a Drupal site
+                </aside>
+            </section>
+            <section>
+                <h4>Machine learning, coupling with marketing automation, ...</h4>
+                <!-- Add video here of the Dropsolid site that changes with behavior -->
+                <iframe width="1125" height="633" src="https://drive.google.com/file/d/1UTNBPUVetBkQaAWLGjl70mCnJ1ZCwn7T/preview" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <aside class="notes">
+                    Show how it looks like for the Dropsolid site.
+                </aside>
+            </section>
+            <section data-background-image="img/unomi.png" data-background-size="100%" data-background-opacity="0.1">
+                <p>
+                    Apache Unomi™: The Open Source Customer Data Platform
+                    Apache Unomi™ (pronounced "You know me") is a Java Open Source customer data platform, a Java server designed to manage customers, leads and visitors data and help personalize customers experiences while also offering features to respect visitor privacy rules (such as GDPR)
+                </p>
+                <aside class="notes">
+                    Capture + Rules + Elastic Search = Quick segmenting, real time.
+                </aside>
+            </section>
+            <section data-background-image="img/Unomi___Drupal_org.png" data-background-opacity="1">
+            </section>
+            <section data-background-image="img/unomisdkphp.png" data-background-opacity="1">
+            </section>
+            <section data-background-image="img/unomisdknode.png" data-background-opacity="1">
+            </section>            
+            <section data-background-image="img/opencoredrupalmauticunomi.png" data-background-opacity="0.1">
+                <h2>
+                    Lock-in
+                </h2>
+                <p>
+                    Be on the lookout for lock-in. Many of the vendors out there have great Saas, but who owns your data and where it it stored?
+                </p>
+                <p class="fragment">
+                    Follow the Open Core principle as much as you can. Pay for support, maintenance but not for licenses. It's what you believe in with Drupal, Apache Solr, Mautic, Nginx, etc... Why settle for less when it comes to data?
+                </p>
+                <aside class="notes">
+                    Capture + Rules + Elastic Search = Quick segmenting, real time.
+                    Make sure you take the Open DXP Approach. Do not allow Saas to hijack your Open Journey. I suggest to read up on the Open Core model. We take it for Granted that Drupal is open. Why not demand that the software where we put all our visitor data is also yours. And don't get me wrong, owning your software doesn't mean you should self-host. Make sure companies are liable for the security and the integrity unless you have the power to take this challenge on.
+                    Why would we build our entire ecosystem on Drupal to then allow corporations to capture the data and embedding ourselves in a vendor lock-in. Mind you, this is not only the case with Acquia but with all the vendors on the Magic Quadrant.
+                </aside>
+            </section>
+            <section data-background-image="img/opencoredrupalmauticunomi.png" data-background-opacity="1">
+            </section>
+            <section>
+                <h2 class="caps">
+                    <span>Q&A</span>
+                </h2>
+                <br/>
+                <p>
+                    <small>
+                        <img data-src="img/drupalcamplondon.svg" class="avatar-40" />
+                        <img data-src="img/nick.jpg" class="avatar-40" />
+                        &nbsp;&nbsp;<a href="https://twitter.com/nick_vh?lang=en">@nick_vh</a>
+                        &nbsp;-&nbsp;CTO
+                    </small>
+                </p>
+                <a href="https://dropsolid.com"><img data-src="img/dropsolidlogo.png" class="logo" /></a>
+            </section>
+        </div>
+    </div>
+    <script src="js/reveal.js"></script>
+    <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        dependencies: [
+            { src: 'plugin/markdown/marked.js' },
+            { src: 'plugin/markdown/markdown.js' },
+            { src: 'plugin/highlight/highlight.js' },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+    </script>
+</body>
+
+</html>
